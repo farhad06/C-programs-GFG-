@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	int a[10][10],b[10][10],t[10][10],r,c,i,j;
+	cout<<"Enter the numbers of row\n";
+	cin>>r;
+	cout<<"Enter the numbers of column\n";
+	cin>>c;
+	cout<<"Enter the  Matrix\n";
+	for(i=0;i<r;i++)
+	for(j=0;j<c;j++)
+	cin>>a[i][j];
+	cout<<"Original  Matrix is :\n\n";
+	for(i=0;i<r;i++){
+	for(j=0;j<c;j++){
+	cout<<a[i][j]<<"\t";
+	}
+	cout<<endl;
+	}
+	int sum =0;
+   for(i=0;i<r;i++){
+		sum = sum + a[i][i];
+   }
+ 	cout<<"\n\nSum of Left Diagonal is:"<<sum;	
+	return 0;
+}
