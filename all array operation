@@ -1,0 +1,72 @@
+#include<stdio.h>
+#include<stdlib.h>
+int x[50],n;
+void create(){
+	printf("Enter the length of the array\n");
+	scanf("%d",&n);
+	printf("Enter the elements of the array\n");
+	for(int i=0;i<n;i++){
+		scanf("%d",&x[i]);
+	}
+}
+void display(){
+	printf("The array elements are\n");
+	for(int i=0;i<n;i++){
+		printf("%d\t",x[i]);
+	}
+	
+}
+void insert(){
+	int pos,e;
+	printf("\nEnter the location where element to be inserted\n");
+	scanf("%d",&pos);
+	if(n<pos){
+		printf("\nArray is overflow\n");
+	}else if(pos<0){
+		printf("\nInvalid array index\n");
+	}else{
+	int temp=n;
+	printf("\nEnter the number to be inserted\n");
+	scanf("%d",&e);
+	while(temp>=pos){
+		x[temp+1]=x[temp];
+		temp--;
+	}
+	x[pos]=e;
+	n++;
+	}
+}
+void delet(){
+	int pos,e;
+	printf("\nEnter the location where element to be deleted\n");
+	scanf("%d",&pos);
+	 if(pos<0 || n<pos){
+		printf("\nInvalid array index\n");
+	}else{
+		int temp=pos;
+		printf("%d is deleted\n",x[temp]);
+	while(temp<=n-1){
+		x[temp]=x[temp+1];
+		temp++;
+	}
+	n--;
+	}
+}
+int main(){
+	int c;
+	while(1){
+		printf("\n1.CREATE||2.DISPLAY||3.EXIT||4.INSERT||5.DELETE\n");
+		printf("Enter your choice\n");
+		scanf("%d",&c);
+		switch(c){
+			case 1: create();break;
+			case 2: display();break;
+			case 3: exit(1);
+			case 4: insert();break;
+			case 5: delet();break;
+			default: printf("Wrong choice??\n");
+		
+		}
+	}
+	return  0;
+}
