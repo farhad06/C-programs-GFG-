@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	int arr[20],i,j,k,n,count=0;
+	cout<<"How many number u want\n";
+	cin>>n;
+	cout<<"Enter the list\n";
+	for(i=0;i<n;i++){
+		cin>>arr[i];
+	}
+	for(i=0;i<n;i++){
+		for(j=i+1;j<n;){
+			if(arr[i]==arr[j]){
+				for(k=j;k<n-1;k++)
+					arr[k]=arr[k+1];
+					count++;
+					--n;
+			}else
+				++j;
+		}
+	}
+	cout<<"\n"<<count<<" element are deleted\n";
+	cout<<"\nNew list is:\t";
+	for(i=0;i<n;i++)
+	cout<<arr[i]<<"\t";
+	return 0;
+	
+}
